@@ -65,7 +65,9 @@ display: flex;
   }
   
   .minValues,
-  .maxValues {
+  .maxValues,
+  .humidity,
+  .wind {
     font-size: 14px;
     margin-top: 5px;
   }

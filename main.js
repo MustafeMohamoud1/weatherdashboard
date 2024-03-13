@@ -17,6 +17,14 @@ function GetInfo() {
           "Max:" + Number(data.list[i].main.temp_max - 288.53).toFixed(1) + "°";
       }
       for (i = 0; i < 5; i++) {
+        document.getElementById("day" + (i + 1) + "Humidity").innerHTML =
+          "Humidity:" + Number(data.list[i].main.humidity).toFixed(1);
+      }
+      for (i = 0; i < 5; i++) {
+        document.getElementById("day" + (i + 1) + "Wind").innerHTML =
+          "Wind:" + Number(data.list[i].wind.speed).toFixed(1);
+      }
+      for (i = 0; i < 5; i++) {
         document.getElementById("img" + (i + 1)).src =
           "https://openweathermap.org/img/wn/" +
           data.list[i].weather[0].icon +
