@@ -1,7 +1,35 @@
+function saveCity(city) {
+    let savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+    if (!savedCities.includes(city)) {
+      savedCities.push(city);
+      localStorage.setItem("savedCities", JSON.stringify(savedCities));
+    }
+  }
+  
+  // Function to load saved cities from local storage and generate buttons
+  function loadSavedCities() {
+    const savedCities = JSON.parse(localStorage.getItem("savedCities")) || [];
+    const cityList = document.getElementById("savedCitiesList");
+    cityList.innerHTML = "";
+    savedCities.forEach((city) => {
+      const button = document.createElement("button");
+      button.textContent = city;
+      button.addEventListener("click", () => {
+        document.getElementById("cityInput").value = city;
+        GetInfo();
+      });
+      cityList.appendChild(button);
+    });
+  }
+
+window.addEventListener("load", loadSavedCities); 
+
 function GetInfo() {
   const newName = document.getElementById("cityInput");
   const cityName = document.getElementById("cityName");
   cityName.innerHTML = newName.value;
+
+  saveCity(newName.value);
 
   fetch(
     "https://api.openweathermap.org/data/2.5/forecast?q=" +newName.value+ "&appid=23d4bea70582f4647de25585f3d9baeb"
