@@ -13,6 +13,8 @@ Usage:
 - Previously searched cities are displayed as buttons below the input field. Click on a saved city button to quickly retrieve its weather forecast.
 
 Technologies Used:
-HTML
-CSS
-JavaScrip
+- HTML
+- CSS
+- JavaScrip
+
+<a href="https://mustafemohamoud1.github.io/weatherdashboard/" target="_blank">Deployed App</a> 
