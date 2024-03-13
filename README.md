@@ -15,6 +15,6 @@ Usage:
 Technologies Used:
 - HTML
 - CSS
-- JavaScrip
+- JavaScript
 
 <a href="https://mustafemohamoud1.github.io/weatherdashboard/" target="_blank">Deployed App</a> 
